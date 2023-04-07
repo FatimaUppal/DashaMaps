@@ -1,17 +1,15 @@
 package com.github.zipcodewilmington;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import sun.text.resources.cldr.ext.FormatData_hsb;
 
 /**
  * @author xtofer
  * @version 1.0.0
  * @date 10/21/19 9:05 AM
  */
-public class DashaMap1Test {
+public class DashaMapTest {
     DashaMap map;
     @Before
     public void before(){
