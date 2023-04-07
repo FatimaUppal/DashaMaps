@@ -32,13 +32,16 @@ public class DashaMap implements HashMapX {
 
     @Override
     public String delete(String key){
-        Node current= arr[HashFunctionOne(key)];
-        Node previous= null;
+        if(bucketSize(key)< 2){
+            arr[HashFunctionOne(key)]= null;
+            return"";
+        }
+        Node current= arr[HashFunctionOne(key)].getNext();
+        Node previous= arr[HashFunctionOne(key)];
         while(current != null){
             if(current.getKey().equals(key)){
                 String val= current.getValue();
-                current= current.getNext();
-                previous.setNext(current);
+                previous.setNext(current.getNext());
                 return val;
             }
             previous= current;
